@@ -1,0 +1,9 @@
+{
+  "name": "webfont",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-webfont": "^1.6.0"
+  }
+}
