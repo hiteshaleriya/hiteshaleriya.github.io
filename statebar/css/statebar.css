@@ -1,0 +1,64 @@
+.statebar {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    font-size: 12px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.statebar li {
+    width: 30%;
+    text-align: center;
+    line-height: 16px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.statebar li em {
+    width: 10px;
+    height: 10px;
+    border-radius: 7px;
+    background: #0074ad;
+    display: inline-block;
+}
+
+.statebar li div {
+    color: #707070;
+    margin-top: 5px;
+}
+
+.statebar li::before {
+    content: '';
+    position: absolute;
+    top: 6.5px;
+    left: -50%;
+    width: 100%;
+    height: 1px;
+    background: #0074ad;
+    z-index: 0;
+    margin-left: 2px;
+}
+
+.statebar li:first-child::before {
+    display: none;
+}
+
+.statebar .active em {
+    background: #0074ad;
+}
+
+.statebar .active ~ li em {
+    background: #d2d0d1;
+}
+
+.statebar .active ~ li::before {
+    background: #d2d0d1;
+}
+
+.statebar .active ~ li div {
+    color: #d2d0d1;
+}
