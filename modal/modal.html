@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Modal</title>
+    <link rel="stylesheet" type="text/css" href="./css/modal.css">
+</head>
+
+<body>
+    <h2>Modal Demo...</h2>
+    
+    <!-- Trigger modal -->
+    <button id="actionBtn">Open Modal</button>
+    
+    <!-- Modal -->
+    <div id="modalEle" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Modal content here..</p>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="./js/modal.js"></script>
+    <script type="text/javascript">
+        modal.init('#modalEle', '#actionBtn');
+    </script>
+</body>
+
+</html>
