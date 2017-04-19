@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h2>Flex Support</h2>
+</body>
+<script>
+    (function(d){
+        var c = " ", f = "flex", fw = "-webkit-"+f, e = d.createElement('dummy');
+        try { 
+            e.style.display = fw; 
+            e.style.display = f; 
+            c += (e.style.display == f || e.style.display == fw) ? f : "no-"+f; 
+        } catch(e) { 
+            c += "no-"+f; 
+        }
+        alert(c);
+        d.documentElement.className += c; 
+    })(document);
+</script>
+
+</html>
