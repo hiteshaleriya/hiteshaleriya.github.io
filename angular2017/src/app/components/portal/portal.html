@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <h2 class="title">Supervisor Portal</h2>
+    </div>
+    <div class="row mt-40">
+        <div class="w-4col m-2col">
+            <div class="help-box">
+                <div class="title">(Click on available worker to assign task)</div>
+                <span class="item avail">
+                <em></em> <small>Available</small>
+            </span>
+                <span class="item busy">
+                <em></em> <small>Busy</small>
+            </span>
+            </div>
+        </div>
+        <div class="w-2col m-1col">
+            <div class="list">
+                <div data-ng-repeat="person in workers" ng-init="startWorking(person)">
+                    <worker record="person" ng-click="onSelectingWorker(person)" ng-class="{active: isActive == 'active' + $index}" />
+                </div>
+            </div>
+        </div>
+        <div class="w-2col m-1col  w-last">
+            <form ng-if="record" name="task" class="task-form" ng-submit="assignTask(task.$valid)" novalidate>
+                <h2>Assign task to '<span ng-bind="record.name"></span>'</h2>
+                <div class="form-field">
+                    <label class="label">Task Name</label>
+                    <input type="text" class="input" name="taskAssigned" ng-model="form.taskAssigned" required/>
+                    <p ng-show="task.taskAssigned.$invalid && task.taskAssigned.$dirty" class="help-block">Task name is required.</p>
+                </div>
+                <div class="form-field">
+                    <label class="label">Task duration (in Seconds)</label>
+                    <input type="number" class="input" name="taskDuration" min="0" ng-model="form.taskDuration" ng-pattern="integerReg" required/>
+                    <p ng-show="task.taskDuration.$error.minlength" class="help-block">Task duration is required.</p>
+                    <p ng-show="task.taskDuration.$invalid && task.taskDuration.$dirty" class="help-block">Please enter valid task duration.</p>
+                </div>
+                <button type="submit" class="btn" ng-class='{disabled: task.$invalid}' ng-disabled="task.$invalid">Assign Task</button>
+            </form>
+        </div>
+    </div>
+</div>

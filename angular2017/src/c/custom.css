@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.right {
+    float: right;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.list {
+    padding: 5px;
+    overflow-x: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.active {
+    background: #eee;
+}
+
+.worker {
+    padding: 5px;
+    border: 1px solid #eee;
+    margin-bottom: 5px;
+}
+
+.worker .status {
+    color: #69dd59;
+}
+
+.worker .status.busy {
+    color: #f0ad4e;
+}
+
+.task-form {
+    padding: 10px;
+}
+
+.form-field {
+    margin: 10px 0px;
+}
+
+.form-field .label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0074ad;
+    text-align: center;
+    border: none;
+    height: auto;
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+.btn.disabled {
+    background-color: grey;
+}
+
+.help-block {
+    color: red;
+    margin-top: 5px;
+}
+
+.form-field .input {
+    padding: 5px;
+    width: 80%;
+}
+
+input.ng-dirty.ng-valid {
+    border: 1px solid green;
+    outline: none;
+}
+
+input.ng-dirty.ng-invalid {
+    border: 1px solid red;
+    outline: none;
+}
+
+.navbar {
+    position: relative;
+    min-height: 40px;
+    padding: 10px;
+    border: 1px solid transparent;
+}
+
+.navbar-default {
+    background-color: #408BB5;
+    border-color: #408BB5;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+}
+
+.navbar .title {
+    color: #fff;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.help-box {
+    margin-top: 10px;
+    padding: 0px 10px;
+}
+
+.help-box .title {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.help-box .item {
+    margin-right: 40px;
+}
+
+.help-box .item em {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: top;
+}
+
+.help-box .item.avail em {
+    background: #69dd59;
+}
+
+.help-box .item.busy em {
+    background: #f0ad4e;
+}
+
+/* -----------------------------------
+basic layout
+----------------------------------- */
+
+.row {
+    clear: left;
+    overflow: hidden;
+    zoom: 1;
+    _overflow: visible;
+}
+
+.w-4col,
+.w-3col,
+.w-2col,
+.w-1col,
+.m-2col,
+.m-1col {
+    margin-bottom: 1em;
+}
+
+
+/* -----------------------------------
+wide
+----------------------------------- */
+
+@media (min-width: 700px) {
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .w-4col,
+    .w-3col,
+    .w-2col,
+    .w-1col {
+        float: left;
+        margin-right: 2%;
+    }
+    .w-4col {
+        width: 100%;
+    }
+    .w-3col {
+        width: 74.5%;
+    }
+    .w-2col {
+        width: 49%;
+    }
+    .w-1col {
+        width: 23.5%;
+    }
+    .w-4col,
+    .w-last {
+        margin-right: 0;
+    }
+}
+
+
+/* -----------------------------------
+medium
+----------------------------------- */
+
+@media (min-width: 500px) and (max-width: 700px) {
+    .m-2col,
+    .m-1col {
+        float: left;
+        margin-right: 4%;
+    }
+    .m-2col {
+        width: 100%;
+    }
+    .m-1col {
+        width: 48%;
+    }
+    .m-2col,
+    .m-last,
+    .w-last {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .list {
+        max-height: 50vh;
+        overflow-y: scroll;
+    }
+}
