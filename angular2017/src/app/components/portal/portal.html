@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-field">
                     <label class="label">Task duration (in Seconds)</label>
-                    <input type="number" class="input" name="taskDuration" min="0" ng-model="form.taskDuration" ng-pattern="integerReg" required/>
+                    <input type="number" class="input" name="taskDuration" min="1" ng-model="form.taskDuration" ng-pattern="integerReg" required/>
                     <p ng-show="task.taskDuration.$error.minlength" class="help-block">Task duration is required.</p>
                     <p ng-show="task.taskDuration.$invalid && task.taskDuration.$dirty" class="help-block">Please enter valid task duration.</p>
                 </div>
