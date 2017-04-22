@@ -1,0 +1,27 @@
+{
+  "short_name": "Portal",
+  "name": "Supervisor Portal",
+  "description": "Progressive Web Application demonstration",
+  "icons": [
+    {
+      "src": "./src/icons/worker-icon-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/icons/worker-icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/icons/worker-icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./?utm_source=web_app_manifest",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#29BDBB",
+  "background_color": "#29BDBB"
+}
