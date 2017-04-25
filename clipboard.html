@@ -1,0 +1,35 @@
+
+<html>
+<head>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<head>
+<body>
+	<div class="container" style="margin-top:50px">
+		<div class="input-group">
+			<input type="text" id="txtTestInput" class="form-control"/>
+			<span class="input-group-btn">
+				<button id="btnCopy" class="btn btn-primary">Copy me!</button>
+			</span>
+		</div>
+	</div>
+</body>
+
+<!-- The ZeroClipboard initialization goes here -->
+<script>
+$(document).ready(function(){
+
+	ZeroClipboard.config( { swfPath: "./ZeroClipboard.swf" } );
+	var client = new ZeroClipboard($("#btnCopy"));
+
+  client.on("copy", function (event) {
+  	var copiedValue = $('#txtTestInput').val();
+      var clipboard = event.clipboardData;
+      clipboard.setData("text/plain", copiedValue);
+      alert('The copied value is: ' + copiedValue);
+  });
+})
+</script>
+</html>
