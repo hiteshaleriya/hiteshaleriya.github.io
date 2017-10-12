@@ -1,0 +1,32 @@
+.container {
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+}
+
+.img {
+    display: block;
+    width: 284px;
+    height: 200px;
+    border: 0 none;
+    margin-top: 10px;
+}
+
+img[data-src] {
+    //transform: scale(1.05);
+    //filter: blur(1vw);
+}
+
+img.reveal {
+    will-change: transform, opacity; 
+    animation: reveal 1s ease-out;
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
