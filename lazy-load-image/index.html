@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>Image Lazy Load</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="c/style.css">
+</head>
+
+<body>
+    <div class="container">
+    	<h2>Image Lazy Load</h2>
+        <img src="./i/1-thumb.jpg" data-src="./i/1.jpg" style="background:#27304F" class="img" />
+        <img src="./i/2-thumb.jpg" data-src="./i/2.jpg" style="background:#1090CD" class="img" />
+        <img src="./i/3-thumb.jpg" data-src="./i/3.jpg" style="background:#123763" class="img" />
+        <img src="./i/4-thumb.jpg" data-src="./i/4.jpg" style="background:#346801" class="img" />
+        <img src="./i/5-thumb.jpg" data-src="./i/5.jpg" style="background:#618AC2" class="img" />
+        <img src="./i/6-thumb.jpg" data-src="./i/6.jpg" style="background:#CF9941" class="img" />
+    </div>
+</body>
+<script src="j/lazyLoadImage.js"></script>
+<script type="text/javascript">
+    lazyLoadImage.init();
+</script>
+</html>

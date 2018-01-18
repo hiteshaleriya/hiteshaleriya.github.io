@@ -1,4 +1,22 @@
-;(function(window) {
+/**
+ * Author : Hitesh Aleriya
+ * Version : base
+ * Desc : Image Lazy load plugin
+ *
+ * USAGE:
+ * Simply add this plugin on your page and initialize it with:
+ * lazyLoadImage.init();
+ *
+ * SYNTAX:
+ * <img src="./i/1-thumb.jpg" data-src="./i/1.jpg" style="background:#27304F" class="img" />
+ *
+ * ATTRIBUTES:
+ * style: background color for the image, always use dominant color of the image.
+ * src: Thumbnail image source, temporarily shown until the actual image download.
+ * data-src: Actual image source.
+ */
+
+var lazyLoadImage = (function(window) {
     var timer;
 
     // image in viewport?
@@ -55,7 +73,7 @@
         var len = images.length, img;
         for (var i=0; i<len; i++) {
             img = images[i];
-            if (img.getAttribute('data-src') && isInViewport(img)) {
+            if (isInViewport(img)) {
                 loadImg(img);
             }
         }
@@ -69,12 +87,21 @@
         }, 300);
     }
     
-    if (window.addEventListener) {
-        window.addEventListener('load', lazyLoadImg);
-        window.addEventListener('scroll', scroller, false);
-    } else {
-        window.attachEvent('onload', lazyLoadImg);
-        window.attachEvent('onscroll', scroller);
+    // initializing plugin
+    function init() {
+        lazyLoadImg();
+        if (!window.isLazyLoadImage) {
+            window.isLazyLoadImage = true;
+            if (window.addEventListener) {
+                window.addEventListener('scroll', scroller);
+            } else {
+                window.attachEvent('onscroll', scroller);
+            }
+        }
     }
+
+    return {
+        init: init
+    };
 
 })(window);
