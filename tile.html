@@ -40,7 +40,7 @@
 			var randX = Math.floor((Math.random() * (dimension.width-50)) + 1);
 			var randY = Math.floor((Math.random() * (dimension.height-50)) + 1);
 			$box.style.transform = `translate(${randX}px, ${randY}px)`;
-		}, 800);
+		}, 1000);
 
 		$container.addEventListener("click", function(e) {
 			var target = e.target;
